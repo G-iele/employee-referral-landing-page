@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.variable}>
-        <div className={styles.layout}>
+        <div>
           <Header />
           <div className={styles.main}>
             <div className={styles.menu}>

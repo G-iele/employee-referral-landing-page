@@ -9,11 +9,11 @@ type CardProps = {
 
 const Card: React.FC<CardProps> = ({ title, svg, content }) => {
   return (
-    <div className={styles.cardContainer}>
+    <div className={styles.card}>
       <Image src={svg} alt={title} width={40} height={40} />
-      <div className={styles.contentContainer}>
+      <div className={styles.card__content}>
         <h4>{title}</h4>
-        <p className={styles.content}>{content}</p>
+        <p className={styles.card__text}>{content}</p>
       </div>
     </div>
   );

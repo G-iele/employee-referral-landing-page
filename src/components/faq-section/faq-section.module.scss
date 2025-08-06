@@ -1,24 +1,24 @@
 @use '../../app/variables' as *;
 
-.sectionContainer {
+.faqSection {
   margin: 48px 16px;
   display: flex;
   flex-direction: column;
   align-items: start;
   gap: 24px;
-}
 
-.faqContainer {
-  width: 100%;
-  background-color: $secondary-background-color;
-  padding: 0 16px;
-  display: flex;
-  flex-direction: column;
-  border-radius: 8px;
-}
+  &__list {
+    width: 100%;
+    background-color: $secondary-background-color;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+  }
 
-.divider {
-  width: 100%;
-  height: 1px;
-  background-color: $divider-color;
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background-color: $divider-color;
+  }
 }

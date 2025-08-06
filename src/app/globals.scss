@@ -87,24 +87,3 @@ label {
   font-size: 12px;
   line-height: 16px;
 }
-
-input {
-  height: 56px;
-  border-radius: 8px;
-  background-color: $label-background-color;
-  padding: 24px 16px 8px;
-
-  outline: none;
-  border: none;
-
-  &:focus,
-  &:hover {
-    outline: 1px solid $border-input-color;
-  }
-
-  &::placeholder {
-    color: $secondary-font-color;
-    font-size: 16px;
-    line-height: 24;
-  }
-}

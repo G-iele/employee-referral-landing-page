@@ -16,7 +16,7 @@ const Header = () => {
         <Image src="logo.svg" alt="logo" width={128} height={32} priority />
       </Link>
 
-      <nav className={styles.nav}>
+      <nav className={styles.header__nav}>
         <ul>
           <li>
             <Link href="/">Home</Link>
@@ -36,7 +36,10 @@ const Header = () => {
         </ul>
       </nav>
 
-      <button onClick={() => setMenuOpen(!menuOpen)} className={styles.button}>
+      <button
+        onClick={() => setMenuOpen(!menuOpen)}
+        className={styles.header__button}
+      >
         <Image
           src={menuOpen ? 'close.svg' : 'menu.svg'}
           alt={menuOpen ? 'Close menu' : 'Open menu'}
@@ -46,7 +49,7 @@ const Header = () => {
       </button>
 
       {menuOpen && (
-        <div className={styles.menu}>
+        <div className={styles.header__menu}>
           <Menu />
         </div>
       )}

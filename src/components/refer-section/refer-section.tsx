@@ -23,7 +23,7 @@ const ReferSection = () => {
   return (
     <>
       <h1>Refer Friends and Get Real Rewards</h1>
-      <section className={styles.container}>
+      <section className={styles.refer}>
         <Image src="/savings.svg" alt="Savings" width={120} height={128} />
         <h2>Refer friends and get rewards</h2>
         <p>
@@ -38,15 +38,24 @@ const ReferSection = () => {
             id="email"
             name="email"
             placeholder="Enter your email address"
+            className={`${styles.refer__input} ${
+              !state.success && state.message
+                ? 'styles.refer__input--error'
+                : ''
+            }`}
           />
 
           {state.message && (
-            <p className={state.success ? styles.success : styles.error}>
+            <p
+              className={
+                state.success ? styles.refer__success : styles.refer__error
+              }
+            >
               {state.message}
             </p>
           )}
 
-          <button type="submit" className={styles.submit}>
+          <button type="submit" className={styles.refer__submit}>
             Get Link
           </button>
         </form>

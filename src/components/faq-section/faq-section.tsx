@@ -33,9 +33,9 @@ const FaqSection = () => {
   ];
 
   return (
-    <section className={styles.sectionContainer}>
+    <section className={styles.faqSection}>
       <h2>FAQ</h2>
-      <div className={styles.faqContainer}>
+      <div className={styles.faqSection__list}>
         {faqsData.map((faq, i) => (
           <div key={`${faq.title}-${i}`}>
             <AccordionRow
@@ -43,7 +43,9 @@ const FaqSection = () => {
               title={faq.title}
               content={faq.content}
             />
-            {i < faqsData.length - 1 && <div className={styles.divider} />}
+            {i < faqsData.length - 1 && (
+              <div className={styles.faqSection__divider} />
+            )}
           </div>
         ))}
       </div>

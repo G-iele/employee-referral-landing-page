@@ -1,6 +1,6 @@
 @use '../../app/variables' as *;
 
-.container {
+.refer {
   background-color: $secondary-background-color;
   padding: 48px 16px;
   margin: 0 16px;
@@ -9,22 +9,57 @@
   align-items: center;
   gap: 32px;
   border-radius: 8px;
-}
 
-.submit {
-  background-color: $primary-button-color;
-  height: 48px;
-  border-radius: 8px;
-  border: none;
+  &__input {
+    height: 56px;
+    border-radius: 8px;
+    background-color: $label-background-color;
+    padding: 24px 16px 8px;
 
-  &:focus,
-  &:active,
-  &:hover {
-    border: 1px solid $border-button-color;
+    outline: none;
+    border: none;
+
+    &:focus,
+    &:active,
+    &:hover {
+      border: 1px solid $border-color;
+    }
+
+    &::placeholder {
+      color: $secondary-font-color;
+      font-size: 16px;
+      line-height: 24;
+    }
+
+    &--error {
+      border: 1px solid $error-color;
+    }
   }
 
-  color: $tertiary-font-color;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 700;
+  &__submit {
+    background-color: $primary-button-color;
+    height: 48px;
+    border-radius: 8px;
+    border: none;
+
+    &:focus,
+    &:active,
+    &:hover {
+      border: 1px solid $border-color;
+    }
+
+    color: $tertiary-font-color;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+  }
+  &__success {
+    color: $success-color;
+    font-size: 14px;
+  }
+
+  &__error {
+    color: $error-color;
+    font-size: 14px;
+  }
 }

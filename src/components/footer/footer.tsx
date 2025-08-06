@@ -4,9 +4,9 @@ import styles from './footer.module.scss';
 
 const Footer = () => {
   return (
-    <footer className={styles.container}>
-      <div className={styles.linksContainer}>
-        <div>
+    <footer className={styles.footer}>
+      <div className={styles.footer__links}>
+        <nav aria-label="Sitemap">
           <h5>Sitemap</h5>
           <ul>
             <li>
@@ -28,10 +28,10 @@ const Footer = () => {
               <Link href="#">Reviews</Link>
             </li>
           </ul>
-        </div>
+        </nav>
 
-        <div className={styles.followUsContainer}>
-          <div>
+        <div className={styles.footer__group}>
+          <nav aria-label="Follow us">
             <h5>Follow us</h5>
             <ul>
               <li>
@@ -68,19 +68,21 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </nav>
 
           <div>
             <h5>Contact us</h5>
-            <ul>
-              <li>
-                <a href="mailto:hi@ratepunk.com">hi@ratepunk.com</a>
-              </li>
-            </ul>
+            <address>
+              <ul>
+                <li>
+                  <a href="mailto:hi@ratepunk.com">hi@ratepunk.com</a>
+                </li>
+              </ul>
+            </address>
           </div>
         </div>
 
-        <div>
+        <nav aria-label="Extensions">
           <h5>Get the extention</h5>
           <ul>
             <li>
@@ -93,9 +95,9 @@ const Footer = () => {
               <a href="#">Firefox Extension</a>
             </li>
           </ul>
-        </div>
+        </nav>
 
-        <div>
+        <nav aria-label="Mobile apps">
           <h5>Get the app</h5>
           <ul>
             <li>
@@ -104,8 +106,32 @@ const Footer = () => {
               </a>
             </li>
           </ul>
-        </div>
+        </nav>
       </div>
+
+      <div className={styles.footer__logo}>
+        <Image src="logoWhite.svg" alt="Logo" width={125} height={32} />
+      </div>
+
+      <div className={styles.footer__ratings}>
+        <Image src="trustpilot.svg" alt="Trustpilot" width={130} height={32} />
+        <Image src="rating.svg" alt="Rating" width={132} height={24} />
+      </div>
+
+      <nav aria-label="Legal links">
+        <ul className={styles.footer__legal}>
+          <li>
+            <Link href="#">Privacy Policy</Link>
+          </li>
+          <li>
+            <Link href="#">Terms & Conditions</Link>
+          </li>
+        </ul>
+      </nav>
+
+      <small className={styles.footer__copyright}>
+        © 2024 RatePunk. All Rights Reserved.
+      </small>
     </footer>
   );
 };

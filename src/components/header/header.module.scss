@@ -5,36 +5,35 @@
   justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
-}
 
-.nav {
-  display: none;
-}
+  &__nav {
+    display: none;
+  }
 
-.button {
-  display: inline-block;
-  background: none;
-  font-size: 24px;
-  border: none;
-  cursor: pointer;
-}
+  &__button {
+    background: none;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+  }
 
-.menu {
-  position: absolute;
-  background-color: white;
-  top: 64px;
-  left: 0;
-  width: 100vw;
-  z-index: 1;
-  height: 100vh;
+  &__menu {
+    position: absolute;
+    background-color: white;
+    top: 64px;
+    left: 0;
+    width: 100vw;
+    z-index: 1;
+    height: 100vh;
+  }
 }
 
 @media (min-width: 708px) {
-  .nav {
+  .header__nav {
     display: block;
   }
 
-  .button {
+  .header__button {
     display: none;
   }
 }

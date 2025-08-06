@@ -37,7 +37,7 @@ const AccordionRow: React.FC<AccordionRowProps> = ({
 
   return (
     <>
-      <div className={styles.row} onClick={() => toggleRow(rowId)}>
+      <div className={styles.accordion__row} onClick={() => toggleRow(rowId)}>
         <h3>{title}</h3>
         <Image
           src={isOpen ? 'arrowUp.svg' : 'arrowDown.svg'}
@@ -46,7 +46,7 @@ const AccordionRow: React.FC<AccordionRowProps> = ({
           height={16}
         />
       </div>
-      <div ref={scope} className={styles.rowContent}>
+      <div ref={scope} className={styles.accordion__content}>
         <p>{content}</p>
       </div>
     </>

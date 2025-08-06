@@ -1,39 +1,76 @@
 @use '../../app/variables' as *;
 
-.container {
+.footer {
   background-color: $tertiary-background-color;
   color: $tertiary-font-color;
   padding: 64px 32px 48px;
-}
 
-.linksContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  margin-bottom: 64px;
-
-  h5 {
-    font-size: 16px;
-    line-height: 24px;
-    color: $secondary-font-color;
-    margin-bottom: 16px;
-  }
-
-  ul {
+  &__links {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 32px;
+    margin-bottom: 64px;
+
+    h5 {
+      font-size: 16px;
+      line-height: 24px;
+      color: $secondary-font-color;
+      margin-bottom: 16px;
+      font-weight: 400;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    li {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    address {
+      font-style: normal;
+    }
   }
 
-  a {
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  &__logo {
+    margin-bottom: 32px;
+  }
+
+  &__ratings {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 16px;
+    margin-bottom: 48px;
   }
-}
 
-.followUsContainer {
-  display: flex;
-  gap: 32px;
-  flex-direction: column;
+  &__legal {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 32px;
+    font-size: 14px;
+    line-height: 24px;
+    color: $secondary-font-color;
+  }
+
+  &__copyright {
+    font-size: 14px;
+    line-height: 24px;
+    color: $secondary-font-color;
+  }
 }
