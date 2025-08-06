@@ -1,0 +1,40 @@
+.header {
+  height: 64px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.nav {
+  display: none;
+}
+
+.button {
+  display: inline-block;
+  background: none;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+}
+
+.menu {
+  position: absolute;
+  background-color: white;
+  top: 64px;
+  left: 0;
+  width: 100vw;
+  z-index: 1;
+  height: 100vh;
+}
+
+@media (min-width: 708px) {
+  .nav {
+    display: block;
+  }
+
+  .button {
+    display: none;
+  }
+}

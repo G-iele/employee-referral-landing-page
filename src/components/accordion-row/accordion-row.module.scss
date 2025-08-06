@@ -1,0 +1,19 @@
+@use '../../app/variables' as *;
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  cursor: pointer;
+}
+
+.rowContent {
+  overflow: hidden;
+  height: 0;
+
+  p {
+    text-align: start;
+    padding-bottom: 24px;
+  }
+}

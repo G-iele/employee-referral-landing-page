@@ -1,0 +1,24 @@
+@use '../../app/variables' as *;
+
+.sectionContainer {
+  margin: 48px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 24px;
+}
+
+.faqContainer {
+  width: 100%;
+  background-color: $secondary-background-color;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: $divider-color;
+}
