@@ -4,21 +4,21 @@ import { saveEmail } from '@/app/actions/save-email';
 import Image from 'next/image';
 
 import styles from './refer-section.module.scss';
-import { useEffect, useState } from 'react';
-import { useFormState } from 'react-dom';
+import { useActionState, useEffect, useRef } from 'react';
 
 const ReferSection = () => {
-  const [email, setEmail] = useState('');
-  const [state, formAction] = useFormState(saveEmail, {
+  const [state, formAction] = useActionState(saveEmail, {
     message: '',
     success: false
   });
 
+  const formRef = useRef<HTMLFormElement>(null);
+
   useEffect(() => {
     if (state.success) {
-      setEmail('');
+      formRef.current?.reset();
     }
-  }, [state]);
+  }, [state.success]);
 
   return (
     <>
@@ -32,12 +32,11 @@ const ReferSection = () => {
           cash-out at 20 coins.
         </p>
 
-        <form action={formAction}>
+        <form ref={formRef} action={formAction}>
           <label htmlFor="email">Email address</label>
           <input
             id="email"
             name="email"
-            onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email address"
           />
 
