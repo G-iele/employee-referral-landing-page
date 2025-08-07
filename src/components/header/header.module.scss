@@ -33,11 +33,25 @@
 }
 
 @media (min-width: 708px) {
-  .header__nav {
-    display: block;
-  }
+  .header {
+    position: relative;
+    top: 16px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px 0px #00000029;
+    justify-content: start;
+    gap: 48px;
 
-  .header__button {
-    display: none;
+    &__nav {
+      display: block;
+
+      ul {
+        display: flex;
+        gap: 32px;
+      }
+    }
+
+    &__button {
+      display: none;
+    }
   }
 }

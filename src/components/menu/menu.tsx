@@ -15,20 +15,24 @@ const Menu = ({ onLinkClick }: MenuProps) => {
 
   return (
     <aside>
-      <ul className={styles.menuList}>
+      <ul className={styles.menu__list}>
         {SIDEMENU_ITEMS.map((category) => (
-          <li key={category.title}>
-            <h5>{category.title.toUpperCase()}</h5>
-            <ul>
+          <li key={category.title} className={styles.menu__category}>
+            <h5 className={styles.menu__title}>
+              {category.title.toUpperCase()}
+            </h5>
+            <ul className={styles.menu__links}>
               {category.list.map((listItem) => {
                 const isActive = pathname === listItem.url;
                 return (
-                  <li key={listItem.title}>
+                  <li key={listItem.title} className={styles.menu__item}>
                     <Link
                       href={listItem.url}
-                      className={`${styles.menu__link} ${
-                        isActive ? styles.active : ''
-                      }`}
+                      className={
+                        isActive
+                          ? `${styles.menu__link} ${styles['menu__link--active']}`
+                          : styles.menu__link
+                      }
                       onClick={onLinkClick}
                     >
                       {listItem.icon}

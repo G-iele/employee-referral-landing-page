@@ -11,13 +11,27 @@
   border-radius: 8px;
 
   &__input {
-    height: 56px;
     border-radius: 8px;
     background-color: $label-background-color;
-    padding: 24px 16px 8px;
+    padding: 8px 0;
 
     outline: none;
     border: none;
+
+    &::placeholder {
+      color: $secondary-font-color;
+      font-size: 16px;
+      line-height: 24;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background-color: $label-background-color;
+    border-radius: 8px;
+    padding: 8px 16px;
 
     &:focus,
     &:active,
@@ -25,15 +39,28 @@
       border: 1px solid $border-color;
     }
 
-    &::placeholder {
-      color: $secondary-font-color;
-      font-size: 16px;
-      line-height: 24;
-    }
-
     &--error {
       border: 1px solid $error-color;
     }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: 350px;
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    top: 8px;
+    left: 16px;
+
+    color: $secondary-font-color;
+    font-size: 12px;
+    line-height: 16px;
   }
 
   &__submit {
@@ -61,5 +88,12 @@
   &__error {
     color: $error-color;
     font-size: 14px;
+  }
+}
+
+@media (min-width: 708px) {
+  .refer {
+    padding: 48px 64px;
+    margin: 0;
   }
 }

@@ -1,8 +1,7 @@
 .main {
   display: flex;
-  flex: 1;
   gap: 50px;
-  padding-top: 56px;
+  padding-top: 70px;
 }
 
 .menu {
@@ -12,5 +11,15 @@
 @media (min-width: 708px) {
   .menu {
     display: block;
+  }
+
+  .page {
+    margin-right: 64px;
+  }
+
+  .pageContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
   }
 }

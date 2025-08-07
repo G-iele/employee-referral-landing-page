@@ -32,18 +32,24 @@ const ReferSection = () => {
           cash-out at 20 coins.
         </p>
 
-        <form ref={formRef} action={formAction}>
-          <label htmlFor="email">Email address</label>
-          <input
-            id="email"
-            name="email"
-            placeholder="Enter your email address"
-            className={`${styles.refer__input} ${
+        <form ref={formRef} action={formAction} className={styles.refer__form}>
+          <div
+            className={`${styles.refer__field} ${
               !state.success && state.message
-                ? 'styles.refer__input--error'
+                ? styles['refer__field--error']
                 : ''
             }`}
-          />
+          >
+            <label htmlFor="email" className={styles.refer__label}>
+              Email address
+              <input
+                id="email"
+                name="email"
+                placeholder="Enter your email address"
+                className={styles.refer__input}
+              />
+            </label>
+          </div>
 
           {state.message && (
             <p
