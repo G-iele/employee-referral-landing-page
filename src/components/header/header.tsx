@@ -10,6 +10,10 @@ import styles from './header.module.scss';
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <header className={styles.header}>
       <Link href="/">
@@ -50,7 +54,7 @@ const Header = () => {
 
       {menuOpen && (
         <div className={styles.header__menu}>
-          <Menu />
+          <Menu onLinkClick={handleLinkClick} />
         </div>
       )}
     </header>

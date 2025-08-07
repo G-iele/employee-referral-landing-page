@@ -14,7 +14,7 @@ const Menu = ({ onLinkClick }: MenuProps) => {
   const pathname = usePathname();
 
   return (
-    <aside className={styles.asside}>
+    <aside>
       <ul className={styles.menuList}>
         {SIDEMENU_ITEMS.map((category) => (
           <li key={category.title}>

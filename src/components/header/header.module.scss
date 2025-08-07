@@ -1,10 +1,14 @@
+@use '../../app/variables' as *;
+
 .header {
   height: 64px;
   padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffffff;
+  background-color: $secondary-background-color;
+  position: fixed;
+  width: 100%;
 
   &__nav {
     display: none;
@@ -18,13 +22,13 @@
   }
 
   &__menu {
-    position: absolute;
-    background-color: white;
+    position: fixed;
+    background-color: $secondary-background-color;
     top: 64px;
     left: 0;
     width: 100vw;
+    height: calc(100vh - 64px);
     z-index: 1;
-    height: 100vh;
   }
 }
 
