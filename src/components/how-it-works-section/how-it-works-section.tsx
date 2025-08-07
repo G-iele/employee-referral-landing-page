@@ -34,14 +34,16 @@ const HowItWorksSection = () => {
   return (
     <section className={styles.container}>
       <h2>How it works?</h2>
-      {cardsData.map((card) => (
-        <Card
-          key={card.title}
-          title={card.title}
-          content={card.content}
-          svg={card.svg}
-        />
-      ))}
+      <div className={styles.container__card}>
+        {cardsData.map((card) => (
+          <Card
+            key={card.title}
+            title={card.title}
+            content={card.content}
+            svg={card.svg}
+          />
+        ))}
+      </div>
     </section>
   );
 };
