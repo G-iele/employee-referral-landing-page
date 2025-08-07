@@ -97,41 +97,77 @@ const Footer = () => {
           </ul>
         </nav>
 
-        <nav aria-label="Mobile apps">
+        <nav aria-label="Mobile apps" className={styles.footer__app}>
           <h5>Get the app</h5>
           <ul>
-            <li>
+            <li className={styles['footer__app--desctop']}>
+              <a href="#">
+                <Image src="qr.svg" alt="Qr code" width={124} height={124} />
+              </a>
+            </li>
+            <li className={styles['footer__app--mobile']}>
               <a href="#">
                 <Image src="app.svg" alt="App store" width={163} height={48} />
+              </a>
+            </li>
+            <li className={styles['footer__app--desctop']}>
+              <a href="#">
+                <Image src="app.svg" alt="App store" width={124} height={38} />
+              </a>
+            </li>
+            <li className={styles['footer__app--desctop']}>
+              <a href="#">
+                <Image
+                  src="gooApp.svg"
+                  alt="Google app store"
+                  width={124}
+                  height={38}
+                />
               </a>
             </li>
           </ul>
         </nav>
       </div>
 
-      <div className={styles.footer__logo}>
-        <Image src="logoWhite.svg" alt="Logo" width={125} height={32} />
+      <div className={styles.footer__logoRatings}>
+        <div className={styles.footer__logo}>
+          <Image src="logoWhite.svg" alt="Logo" width={125} height={32} />
+        </div>
+
+        <div className={styles.footer__ratings}>
+          <Image
+            className={styles.footer__exellent}
+            src="exellent.svg"
+            alt="Exellent"
+            width={98}
+            height={32}
+          />
+          <Image
+            src="trustpilot.svg"
+            alt="Trustpilot"
+            width={130}
+            height={32}
+          />
+          <Image src="rating.svg" alt="Rating" width={132} height={24} />
+        </div>
       </div>
 
-      <div className={styles.footer__ratings}>
-        <Image src="trustpilot.svg" alt="Trustpilot" width={130} height={32} />
-        <Image src="rating.svg" alt="Rating" width={132} height={24} />
+      <div className={styles.footer__legalCopyright}>
+        <nav aria-label="Legal links">
+          <ul className={styles.footer__legal}>
+            <li>
+              <Link href="#">Privacy Policy</Link>
+            </li>
+            <li>
+              <Link href="#">Terms & Conditions</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <small className={styles.footer__copyright}>
+          © 2024 RatePunk. All Rights Reserved.
+        </small>
       </div>
-
-      <nav aria-label="Legal links">
-        <ul className={styles.footer__legal}>
-          <li>
-            <Link href="#">Privacy Policy</Link>
-          </li>
-          <li>
-            <Link href="#">Terms & Conditions</Link>
-          </li>
-        </ul>
-      </nav>
-
-      <small className={styles.footer__copyright}>
-        © 2024 RatePunk. All Rights Reserved.
-      </small>
     </footer>
   );
 };

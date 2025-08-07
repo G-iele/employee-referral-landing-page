@@ -22,3 +22,9 @@
     background-color: $divider-color;
   }
 }
+
+@media (min-width: 708px) {
+  .faqSection {
+    margin: 48px 0;
+  }
+}
