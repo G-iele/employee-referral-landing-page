@@ -1,0 +1,41 @@
+@use '../../app/variables' as *;
+
+.menuList {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  height: 100vh;
+
+  h5 {
+    color: $quaternary-font-color;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+
+      li {
+        .menu__link {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          font-weight: 600;
+
+          height: 48px;
+          width: 100%;
+
+          &.active {
+            background-color: $secondary-button-color;
+            padding-left: 32px;
+          }
+        }
+      }
+    }
+  }
+}

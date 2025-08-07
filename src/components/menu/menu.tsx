@@ -1,119 +1,42 @@
-import Image from 'next/image';
+'use client';
+
 import Link from 'next/link';
 
 import styles from './menu.module.scss';
+import { usePathname } from 'next/navigation';
+import { SIDEMENU_ITEMS } from '@/constants';
 
-type ListItem = {
-  title: string;
-  icon: string;
-  url: string;
+type MenuProps = {
+  onLinkClick?: () => void;
 };
 
-type MenuItem = {
-  title: string;
-  list: ListItem[];
-};
-
-const Menu = () => {
-  const menu: MenuItem[] = [
-    {
-      title: 'Travel deals',
-      list: [
-        {
-          title: 'Flight Deals',
-          icon: 'flight.svg',
-          url: '/'
-        },
-        {
-          title: 'Bundle Deals',
-          icon: 'bundle.svg',
-          url: '/'
-        },
-        {
-          title: 'Departure Airports',
-          icon: 'departure.svg',
-          url: '/'
-        },
-        {
-          title: 'Deals Upgrades',
-          icon: 'deals.svg',
-          url: '/'
-        }
-      ]
-    },
-    {
-      title: 'Saving Tools',
-      list: [
-        {
-          title: 'Price Tracking',
-          icon: 'price.svg',
-          url: '/'
-        },
-        {
-          title: 'Rebooking',
-          icon: 'rebooking.svg',
-          url: '/'
-        },
-        {
-          title: 'Cashback',
-          icon: 'cashback.svg',
-          url: '/'
-        }
-      ]
-    },
-    {
-      title: 'Account',
-      list: [
-        {
-          title: 'My Profile',
-          icon: 'profile.svg',
-          url: '/'
-        },
-        {
-          title: 'My Wallet',
-          icon: 'wallet.svg',
-          url: '/'
-        },
-        {
-          title: 'Refer Friends',
-          icon: 'refer.svg',
-          url: '/refer'
-        },
-        {
-          title: 'My Bookings',
-          icon: 'bookings.svg',
-          url: '/'
-        },
-        {
-          title: 'My Vouchers',
-          icon: 'vouchers.svg',
-          url: '/'
-        }
-      ]
-    }
-  ];
+const Menu = ({ onLinkClick }: MenuProps) => {
+  const pathname = usePathname();
 
   return (
-    <aside>
-      <ul>
-        {menu.map((menuItem) => (
-          <li key={menuItem.title}>
-            <h5>{menuItem.title}</h5>
+    <aside className={styles.asside}>
+      <ul className={styles.menuList}>
+        {SIDEMENU_ITEMS.map((category) => (
+          <li key={category.title}>
+            <h5>{category.title.toUpperCase()}</h5>
             <ul>
-              {menuItem.list.map((listItem) => (
-                <li key={listItem.title}>
-                  <Link href={listItem.url}>
-                    <Image
-                      src={listItem.icon}
-                      alt={listItem.title}
-                      width={18}
-                      height={18}
-                      style={{ marginRight: '8px' }}
-                    />
-                    {listItem.title}
-                  </Link>
-                </li>
-              ))}
+              {category.list.map((listItem) => {
+                const isActive = pathname === listItem.url;
+                return (
+                  <li key={listItem.title}>
+                    <Link
+                      href={listItem.url}
+                      className={`${styles.menu__link} ${
+                        isActive ? styles.active : ''
+                      }`}
+                      onClick={onLinkClick}
+                    >
+                      {listItem.icon}
+                      {listItem.title}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </li>
         ))}
